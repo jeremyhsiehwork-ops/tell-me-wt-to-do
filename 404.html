@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Little JIRA - Redirecting...</title>
+  <script>
+    // Single Page App redirect for GitHub Pages
+    // Store the original path and redirect to index.html
+    var path = window.location.pathname;
+    var search = window.location.search;
+    var hash = window.location.hash;
+    
+    // Base path for the repo
+    var basePath = '/tell-me-wt-to-do';
+    
+    // Store the intended path in sessionStorage before redirect
+    if (path && path !== basePath && path !== basePath + '/') {
+      sessionStorage.setItem('redirectPath', path);
+    }
+    
+    // Redirect to index.html
+    window.location.replace(basePath + '/index.html' + search + hash);
+  </script>
+</head>
+<body>
+  <p>Redirecting to <a href="/tell-me-wt-to-do/">homepage</a>...</p>
+</body>
+</html>
